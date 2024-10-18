@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+      img {
+        position: relative;
+      }
+      #earth_info,
+      #mercury_info,
+      #venus_info {
+        display: none;
+        width: 350px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Space encyclopedia 💫</h1>
+    <p><i>Click on your favorite planet for info</i></p>
+    <h2>Move your mouse on the sun🌞</h2>
+    <img id="sun" width="100px" src="sun.jpg" />
+    <h2>Mercury 🌕</h2>
+    <img id="mercury" width="115px" src="mercury.jpg" />
+    <p id="mercury_info">
+      Mercury is the first planet from the Sun and the smallest in the Solar
+      System. In English, it is named after the ancient Roman god Mercurius, god
+      of commerce and communication, and the messenger of the gods.
+    </p>
+    <h2>Venus 🌕</h2>
+    <img id="venus" width="100px" src="venus.jpg" />
+    <p id="venus_info">
+      Venus is the second planet from the Sun. It is a terrestrial planet and is
+      the closest in mass and size to its orbital neighbour Earth. Venus has by
+      far the densest atmosphere of the terrestrial planets, composed mostly of
+      carbon dioxide with a thick, global sulfuric acid cloud cover.
+    </p>
+    <h2>Earth 🌍</h2>
+    <img id="earth" width="100px" src="earth.jpg" />
+    <p id="earth_info">
+      Earth is the third planet from the Sun and the only astronomical object
+      known to harbor life. This is enabled by Earth being an ocean world, the
+      only one in the Solar System sustaining liquid surface water.
+    </p>
+  </body>
+  <script>
+    $("#sun").mouseenter(function () {
+      var sun = $("#sun");
+      sun.animate({ left: "350px" }, "slow");
+      sun.animate({ height: "500px", width: "500px" }, "slow");
+
+      sun.animate({ height: "100px", width: "100px" }, "slow");
+      sun.animate({ left: "0%" }, "slow");
+    });
+
+    $(document).ready(function () {
+      $("#mercury").click(function () {
+        var mercury = $("#mercury");
+        var mercury_info = $("#mercury_info");
+        mercury.animate({ height: "125px", width: "125px" });
+        mercury_info.toggle();
+
+        $("#mercury").click(function () {
+          mercury.animate({ height: "115px", width: "115px" });
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $("#venus").click(function () {
+        var venus = $("#venus");
+        var venus_info = $("#venus_info");
+        venus.animate({ height: "110px", width: "110px" });
+        venus_info.toggle();
+
+        $("#venus").click(function () {
+          venus.animate({ height: "100px", width: "100px" });
+        });
+      });
+    });
+
+    $(document).ready(function () {
+      $("#earth").click(function () {
+        var earth = $("#earth");
+        var earth_info = $("#earth_info");
+        earth.animate({ height: "110px", width: "110px" });
+        earth_info.toggle();
+
+        $("#earth").click(function () {
+          earth.animate({ height: "100px", width: "100px" });
+        });
+      });
+    });
+  </script>
+</html>
